@@ -1,7 +1,7 @@
 # oer-so
 An open educational resource developed as an assignment for the Operating Systems course at USP
 
-# Dependencies
+## Dependencies
 
 * Python 3
 
@@ -14,7 +14,7 @@ Run `src/genoer.py`:
     chmod +x src/genoer.py
     src/genoer.py
 
-# Adding code implementations of the problem
+# Code implementations of the problem
 
 Code implementations of solutions to the problem should be located at FOLDER,
 where they will be automatically located. Convention is to name the files as
