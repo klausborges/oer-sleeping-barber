@@ -1,9 +1,18 @@
 # oer-so
 An open educational resource developed as an assignment for the Operating Systems course at USP
 
+# Dependencies
+
+* Python 3
+
 # Building
 
-To build
+Run `src/genoer.py`:
+
+    python src/genoer.py
+
+    chmod +x src/genoer.py
+    src/genoer.py
 
 # Adding code implementations of the problem
 
@@ -30,7 +39,10 @@ page, where language-specific syntax highlighters, features (such as line
 numbering), and themes can be selected.
 
 # To do
-* [] Add more languages
-* [ ] Bla Ble Bli
+* [ ] Add solutions in more programming languages
+* [ ] Real-time language switching in JavaScript
+
+# Thanks
 
 # License
+Code is licensed under the MIT license.
