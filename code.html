@@ -13,10 +13,13 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="assets/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="assets/prismjs/prism.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
 
-    <link href="assets/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
 queries -->
@@ -62,13 +65,48 @@ aria-controls="navbar">
       <div class="page-header">
         <h1>Sticky footer with fixed navbar</h1>
       </div>
-      <p class="lead">t_index_text</p>
-      <p><i class="fa fa-camera-retro"></i></p>
+      <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropLangs" data-toggle="dropdown" aria-expanded="true">
+        DroPdWoN
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropLangs">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Action</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Action</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Action</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">Action</a>
+        </li>
+      </ul>
+      </div>
+
+
+
+      <pre><code class="language">
+      #include &lt;stdio.h&gt;
+
+      int main(int argc, char **argv) {
+        return 0;
+      }</code></pre>
+      </code></pre>
+      <pre><code class="language-javascript">
+      self = (typeof window !== 'undefined')
+        ? window   // if in browser
+        : (
+            (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
+            ? self // if in worker
+            : {}   // if in node js
+        ); </code></pre>
     </div>
 
     <footer class="footer">
       <div class="container">
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=spaceporn&repo=oer-so&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="106px" height="20px"></iframe>
         <p class="text-muted">
           Created by Klaus Borges &middot;
           Code licensed under the MIT license
@@ -79,7 +117,8 @@ aria-controls="navbar">
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="assets/jquery-1.11.2/jquery.min.js"></script>
+    <script src="assets/jquery-1.11.3/jquery.min.js"></script>
     <script src="assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script src="assets/prismjs/prism.js"></script>
   </body>
 </html>
