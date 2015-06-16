@@ -54,36 +54,131 @@
 
     <!-- Content -->
     <div class="container">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <div class="page-header">
-            <h1>About</h1>
-          </div>
-          
-          <div class="dropdown">
+      <div class="page-header">
+            <h1>Code Implementations</h1>
+      </div>
+
+      <div class="dropdown">
             <ul class="nav nav-pills">
-              <li role="presentation" class="active"><a href="#">C</a></li>
-              <li role="presentation"><a href="#">Go</a></li>
-              <li role="presentation"><a href="#">JavaScript</a></li>
+              <li id="pill-c" role="presentation" class="active"><a href="#">C</a></li>
+              <li id="pill-go" role="presentation"><a href="#">Go</a></li>
+              <li id="pill-python" role="presentation"><a href="#">Python</a></li>
             </ul>
-          </div>
+      </div>
 
-          <pre><code class="language">#include &lt;stdio.h&gt;
+      <div class="row">
+        <!-- First column -->
+        <div class="col-md-6">
+          <pre class="code-c"><code class="language-c">void *barber() {
+  while (1) {
+    /* vai dormir se o número de clientes for 0 */
+    sem_wait(&amp;customers);
 
-          int main(int argc, char **argv) {
-            return 0;
-          }</code></pre>
-          </code></pre>
-          <pre><code class="language-javascript">self = (typeof window !== 'undefined')
-            ? window   // if in browser
-            : (
-                (typeof WorkerGlobalScope !== 'undefined' &and;&and; self instanceof WorkerGlobalScope)
-                ? self // if in worker
-                : {}   // if in node js
-            ); </code></pre>
+    /* obtém acesso a 'waiting' */
+    sem_wait(&amp;mutex);
+
+    /* descresce de um o contador de clientes à espera */
+    waiting--;
+
+    /* um barbeiro está agora pronto para cortar cabelo */
+    sem_post(&amp;barbers);
+
+    /* libera 'waiting' */
+    sem_post(&amp;mutex);
+
+    /* corta o cabelo (fora da região crítica) */
+    cut_hair();
+  }
+
+  pthread_exit(NULL);
+}</code></pre>
+          
+          <pre class="code-go" hidden="true"><code class="language-go">package main
+
+import (
+  "./barbershop"
+  "fmt"
+  "time"
+)
+
+func main() {
+  // create a barber
+  barber := barbershop.NewBarber("John")
+
+  // and create a shop, a barber will manage thid
+  // we give 4 seats to the shop
+  shop := barbershop.NewShop(barber, 4)
+
+  // let's barber manage the shop... and continue
+  go barber.ManageShop(shop)
+
+  // because clients arrive later :)
+  time.Sleep(time.Second * 2)
+
+  // let's make a list of client's name
+  clients := []string{"Alain"}
+  clients = append(clients, "Bernard")
+  clients = append(clients, "Claude")
+  clients = append(clients, "Dan")
+  clients = append(clients, "Eric")
+  clients = append(clients, "Franck")
+  clients = append(clients, "Gérard")
+  clients = append(clients, "Henri")
+  clients = append(clients, "Ignasse")
+
+  // create clients
+  for _, c := range clients {
+    client := barbershop.NewClient(c)
+    // let them enter the shop, but use "go"
+    // to create other without waiting the end
+    // of the "entrance"
+    go client.EnterShop(shop)
+
+  }
+
+  // press a key to finish
+  fmt.Scanln()
+
+}</code></pre>
+
+          <pre class="code-python" hidden="true"><code class="language-python">def bla():
+    fuck_you()</code></pre>
         </div>
-        <div class="col-md-3"></div>
+
+        <!-- Second column -->
+        <div class="col-md-6">
+          <pre class="code-c"><code class="language-c">void *customer() {
+  /* entra na região crítica */
+  sem_wait(&mutex);
+
+  /* se não houver cadeiras vazias, saia */
+  if (waiting < CHAIRS) {      
+    customer_arrived();
+
+    /* incrementa o contador de clientes à espera */
+    waiting = waiting + 1;
+
+    /* acorda o barbeiro se necessário */  
+    sem_post(&customers);
+
+    /* libera o acesso a 'waiting' */
+    sem_post(&mutex);
+
+    /* vai dormir se o número de barbeiros livres for 0 */
+    sem_wait(&barbers);
+
+    /* sentado e sendo servido */
+    get_haircut();
+  }
+  else {
+    /* a barbearia está cheia; não espera */
+    sem_post(&mutex);
+    giveup_haircut();
+  }
+}</code></pre>
+          <pre class="code-python" hidden="true"><code class="language-python">def bla():
+    fuck_you2()</code></pre>
+        </div>
       </div>
     </div>
 
