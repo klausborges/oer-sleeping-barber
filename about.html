@@ -45,8 +45,8 @@
             <li><a href="explanation.html">Explanation</a></li>
             <li><a href="solutions.html">Solutions</a></li>
             <li><a href="visualization.html">Visualization</a></li>
-            <li class="active"><a href="code.html">Code</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li class="active"><a href="about.html">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -61,27 +61,33 @@
             <h1>About</h1>
           </div>
           
-          <div class="dropdown">
-            <ul class="nav nav-pills">
-              <li role="presentation" class="active"><a href="#">C</a></li>
-              <li role="presentation"><a href="#">Go</a></li>
-              <li role="presentation"><a href="#">JavaScript</a></li>
+          <p>The Sleeping Barber Visualization is an Open Educational Resource (OER)
+            developed for the Operating Systems I course at University of São Paulo (USP),
+            São Carlos campus.</p>
+          <p>This project aims to improve the course experience for teachers and students
+            alike by providing resources to aid in understanding this common problem in
+            multithreading, such as an explanation of the problem, proposed solutions,
+            a visualization tool, and code implementations in a few programming languages
+          </p>
+          <p>All libraries and resources utilized in the project are licensed under
+            various open source licenses, and the project itself is licensed under the
+            MIT license.</p>
+          <p>
+            <ul>
+              <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+              <li><a href="http://fontawesome.io/">Font Awesome</a></li>
+              <li><a href="http://handlebarsjs.com/">Handlebars</a></li>
+              <li><a href="http://jquery.com/">jQuery</a></li>
+              <li><a href="http://prismjs.com/">Prism</a></li>
             </ul>
-          </div>
-
-          <pre><code class="language">#include &lt;stdio.h&gt;
-
-          int main(int argc, char **argv) {
-            return 0;
-          }</code></pre>
-          </code></pre>
-          <pre><code class="language-javascript">self = (typeof window !== 'undefined')
-            ? window   // if in browser
-            : (
-                (typeof WorkerGlobalScope !== 'undefined' &and;&and; self instanceof WorkerGlobalScope)
-                ? self // if in worker
-                : {}   // if in node js
-            ); </code></pre>
+          </p>
+          <p>The source of this project can be found at
+            <a href="https://github.com/spaceporn/oer-so">GitHub</a>. Contributions are
+            highly encouraged, details can be found at the README, with a handful of
+            features yet to be implemented are on the Roadmap section, which is open to
+            feature proposals itself.</p>
+          <p>Hosting for the project kindly provided by the
+            <a href="http://lasdpc.icmc.usp.br/">LaSDPC</a>.</p>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -100,6 +106,6 @@
     <script src="vendors/jquery-1.11.3/jquery.min.js"></script>
     <script src="vendors/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script src="vendors/prism-1.0.0/prism.js"></script>
-    <script src="resources/js/code.js"></script>
+    <script src="resources/js/test.js"></script>
   </body>
 </html>

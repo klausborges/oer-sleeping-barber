@@ -1,4 +1,6 @@
-# oer-so
+oer-so
+======
+
 An open educational resource developed as an assignment for the Operating
 Systems I course at Universidade de São Paulo (USP), São Carlos campus.
 
@@ -6,11 +8,13 @@ This resource aims to describe the `name` problem, explain a possible solution
 and demonstrate this solution via a graphical visualization, and provide code
 implementations of the solution in different programming languages.
 
-## Dependencies
+Dependencies
+------------
 
 * Python 3
 
-## Building
+Building
+--------
 
 Run `src/genoer.py`:
 
@@ -19,7 +23,8 @@ Run `src/genoer.py`:
     chmod +x src/genoer.py
     src/genoer.py
 
-## Code implementations of the problem
+Code implementations of the problem
+-----------------------------------
 
 Code implementations of solutions to the problem should be located at FOLDER,
 where they will be automatically located. Convention is to name the files as
@@ -43,11 +48,15 @@ rebuilt. Rebuilding can be done from PrismJS's source or from their download
 page, where language-specific syntax highlighters, features (such as line
 numbering), and themes can be selected.
 
-## To do
+To do
+-----
+
 * [ ] Add solutions in more programming languages
 * [ ] Real-time language switching in JavaScript
 
-## Contributions
+Contributions
+-------------
+
 Code contributions must follow conventions adopted by the project. Python code
 should follow PEP8.
 
@@ -57,7 +66,9 @@ folder.
 
 Corrections, for both the code and language JSON files, are also encouraged.
 
-## Thanks
+Thanks
+------
 
-## License
+License
+-------
 Code is licensed under the MIT license.
