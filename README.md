@@ -44,7 +44,7 @@ To do
 * [ ] Add solutions in more programming languages
 * [ ] Templating and translation to Portuguese
 * [ ] Real-time language switching in JavaScript
-* [ ] Visualization tools with real *multi-threading*
+* [ ] Visualization tools with real multi-threading
 
 Contributions
 -------------
@@ -54,17 +54,17 @@ Code contributions must follow conventions adopted by the project.
 Language translation contributions are highly encouraged, even if there is no
 real support for them yet! An implementation of a templating engine is coming.
 
-Corrections, for both the code and language JSON files, are also very welcome.
+Corrections are also very welcome.
 
 Resources
 ---------
 
 Resources used in this project:
 
-* Bootstrap
-* Font Awesome
-* jQuery
-* Prism
+* [Bootstrap](http://getbootstrap.com/)
+* [Font Awesome](http://fontawesome.io/)
+* [jQuery](http://jquery.com/)
+* [Prism](http://prismjs.com/)
 
 License
 -------
