@@ -75,7 +75,7 @@
     sem_wait(&amp;mutex);
 
     /* Barber brings one customer to the barber chair */
-    waiting_customers -= 1;
+    waiting_customers--;
 
     /* Barber is now ready to work */
     sem_post(&amp;barbers);
