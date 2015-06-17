@@ -1,5 +1,5 @@
-oer-so
-======
+Open Educational Resource: The Sleeping Barber
+==============================================
 
 An open educational resource developed as an assignment for the Operating
 Systems I course at Universidade de São Paulo (USP), São Carlos campus.
@@ -53,6 +53,8 @@ To do
 
 * [ ] Add solutions in more programming languages
 * [ ] Real-time language switching in JavaScript
+* [ ] Better use of templates (modularity)
+* [ ] Visualization tools with *multi-threading* (cljs core.async?)
 
 Contributions
 -------------

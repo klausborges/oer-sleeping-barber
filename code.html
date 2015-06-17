@@ -43,7 +43,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="explanation.html">Explanation</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="solution.html">Solution</a></li>
             <li><a href="visualization.html">Visualization</a></li>
             <li class="active"><a href="code.html">Code</a></li>
             <li><a href="about.html">About</a></li>
@@ -62,7 +62,6 @@
             <ul class="nav nav-pills">
               <li id="pill-c" role="presentation" class="active"><a href="#">C</a></li>
               <li id="pill-go" role="presentation"><a href="#">Go</a></li>
-              <li id="pill-python" role="presentation"><a href="#">Python</a></li>
             </ul>
       </div>
 
@@ -71,22 +70,21 @@
         <div class="col-md-6">
           <pre class="code-c"><code class="language-c">void *barber() {
   while (1) {
-    /* vai dormir se o número de clientes for 0 */
+    /* Barber goes to sleep if there are no customers */
     sem_wait(&amp;customers);
 
-    /* obtém acesso a 'waiting' */
+    /* Holds the mutex */
     sem_wait(&amp;mutex);
 
-    /* descresce de um o contador de clientes à espera */
-    waiting--;
+    /* Barber brings one customer to the barber chair */
+    waiting_customers -= 1;
 
-    /* um barbeiro está agora pronto para cortar cabelo */
+    /* Barber is now ready to work */
     sem_post(&amp;barbers);
 
-    /* libera 'waiting' */
+    /* Releases the mutex */
     sem_post(&amp;mutex);
 
-    /* corta o cabelo (fora da região crítica) */
     cut_hair();
   }
 
@@ -140,44 +138,37 @@ func main() {
   fmt.Scanln()
 
 }</code></pre>
-
-          <pre class="code-python" hidden="true"><code class="language-python">def bla():
-    fuck_you()</code></pre>
         </div>
 
         <!-- Second column -->
         <div class="col-md-6">
           <pre class="code-c"><code class="language-c">void *customer() {
-  /* entra na região crítica */
-  sem_wait(&mutex);
+  /* Holds the mutex */
+  sem_wait(&amp;mutex);
 
-  /* se não houver cadeiras vazias, saia */
-  if (waiting < CHAIRS) {      
-    customer_arrived();
+  /* Customer waits if there's an empty waiting chair */
+  if (waiting_customers &lt; N_CHAIRS) {      
+    /* Customer waits */
+    waiting_customers++;
 
-    /* incrementa o contador de clientes à espera */
-    waiting = waiting + 1;
+    /* Barber gets notified of the arrival */  
+    sem_post(&amp;customers);
 
-    /* acorda o barbeiro se necessário */  
-    sem_post(&customers);
+    /* Releases the mutex */
+    sem_post(&amp;mutex);
 
-    /* libera o acesso a 'waiting' */
-    sem_post(&mutex);
+    /* Waits to be called by the barber */
+    sem_wait(&amp;barbers);
 
-    /* vai dormir se o número de barbeiros livres for 0 */
-    sem_wait(&barbers);
-
-    /* sentado e sendo servido */
     get_haircut();
   }
+  /* Customer leaves if there are no empty waiting chairs */
   else {
-    /* a barbearia está cheia; não espera */
-    sem_post(&mutex);
-    giveup_haircut();
+    /* Releases the mutex */
+    sem_post(&amp;mutex);
+    leave_barbershop();
   }
 }</code></pre>
-          <pre class="code-python" hidden="true"><code class="language-python">def bla():
-    fuck_you2()</code></pre>
         </div>
       </div>
     </div>

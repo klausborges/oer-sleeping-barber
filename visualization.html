@@ -42,7 +42,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="explanation.html">Explanation</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="solution.html">Solution</a></li>
             <li class="active"><a href="visualization.html">Visualization</a></li>
             <li><a href="code.html">Code</a></li>
             <li><a href="about.html">About</a></li>
@@ -54,15 +54,93 @@
     <!-- Content -->
     <div class="container">
       <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
           <div class="page-header">
             <h1>Visualization</h1>
           </div>
-
-          <p>Visualization goes here.</p>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">Waiting Room</div>
+              <ul class="list-group">
+                <li class="list-group-item" id="chair1">&nbsp;</li>
+                <li class="list-group-item" id="chair2">&nbsp;</li>
+                <li class="list-group-item" id="chair3">&nbsp;</li>
+                <li class="list-group-item" id="chair4">&nbsp;</li>
+                <li class="list-group-item" id="chair5">&nbsp;</li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">Barber's Chair</div>
+              <ul class="list-group">
+                <li class="list-group-item" id="barberchair"></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">State</div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span>Barber</span><span class="badge" id="barber"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Customers</span><span class="badge" id="customers"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Mutex</span><span class="badge" id="mutex"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Waiting</span><span class="badge" id="waiting"></span>
+              </li>
+
+              <li class="list-group-item">
+                <span>Chairs</span><span class="badge" id="chairs"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">What's going on?</div>
+            <div class="panel-body" id="status"></div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2" id="controller">
+          <div class="btn-group btn-group-justified" role="group" aria-label="Navigation">
+            <button type="button" class="btn btn-default" id="step-prev">
+              <i class="fa fa-chevron-left"></i> Prev
+            </button>
+            <button type="button" class="btn btn-default" id="step-n" disabled></button>
+            <button type="button" class="btn btn-default" id="step-next">
+              <i class="fa fa-chevron-right"></i> Next
+            </button>
+          </div>
+        </div>
+        <div class="col-md-5"></div>
       </div>
     </div>
 
@@ -78,5 +156,6 @@
     <!-- Scripts -->
     <script src="vendors/jquery-1.11.3/jquery.min.js"></script>
     <script src="vendors/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script src="resources/js/visualization.js"></script>
   </body>
 </html>
