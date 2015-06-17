@@ -1,49 +1,39 @@
-Open Educational Resource: The Sleeping Barber
-==============================================
+The Sleeping Barber Problem
+===========================
 
-An open educational resource developed as an assignment for the Operating
-Systems I course at Universidade de São Paulo (USP), São Carlos campus.
+The Sleeping Barber Problem is an Open Educational Resource (OER) developed for
+the Operating Systems I course at University of São Paulo (USP), São Carlos campus.
 
-This resource aims to describe the `name` problem, explain a possible solution
-and demonstrate this solution via a graphical visualization, and provide code
-implementations of the solution in different programming languages.
+This project aims to improve the course experience for teachers and students alike
+by providing resources to aid in understanding a common problem in inter-process
+communication and synchronization. Among these resources there is an explanation of
+the problem and the core concepts needed to understand it, the development and proposal
+of one of the possible solutions, a visualization tool demonstrating the state of the
+semaphores and mutexes, and code implementation of the proposed solution.
 
 Dependencies
 ------------
 
-* Python 3
+None. The project is batteries included!
 
-Building
---------
+Installing
+----------
 
-Run `src/genoer.py`:
+Installing this OER is as simple as cloning this repository, or extracting the contents
+of a zip file and running `index.html` in your browser.
 
-    python src/genoer.py
-
-    chmod +x src/genoer.py
-    src/genoer.py
 
 Code implementations of the problem
 -----------------------------------
-
-Code implementations of solutions to the problem should be located at FOLDER,
-where they will be automatically located. Convention is to name the files as
-language-name.ext, where language-name should be ..., and ext is the usual
-extension type of the language source code files.
-For example, `python.py` for a Python implementation of the solution.
 
 Code implementations will have syntax highlighting provided by PrismJS, but
 the pre-built PrismJS files included in this project only support highlighting
 for:
 
-* C-like languages
-* JavaScript
-* Python
-* Go
-* Java
+* C
 
-This decision reflects in a minimal JS code to optimize page loading times,
-if an implementation in a different language is included, PrismJS should be
+This decision reflects in a minimal JS codebase to optimize page loading times.
+If an implementation in a different language is to be included, PrismJS should be
 rebuilt. Rebuilding can be done from PrismJS's source or from their download
 page, where language-specific syntax highlighters, features (such as line
 numbering), and themes can be selected.
@@ -52,24 +42,29 @@ To do
 -----
 
 * [ ] Add solutions in more programming languages
+* [ ] Templating and translation to Portuguese
 * [ ] Real-time language switching in JavaScript
-* [ ] Better use of templates (modularity)
-* [ ] Visualization tools with *multi-threading* (cljs core.async?)
+* [ ] Visualization tools with real *multi-threading*
 
 Contributions
 -------------
 
-Code contributions must follow conventions adopted by the project. Python code
-should follow PEP8.
+Code contributions must follow conventions adopted by the project.
 
-Language translation contributions are highly encouraged and should be done
-with pull requests. There's a template for the JSON file in the `src/lang`
-folder.
+Language translation contributions are highly encouraged, even if there is no
+real support for them yet! An implementation of a templating engine is coming.
 
-Corrections, for both the code and language JSON files, are also encouraged.
+Corrections, for both the code and language JSON files, are also very welcome.
 
-Thanks
-------
+Resources
+---------
+
+Resources used in this project:
+
+* Bootstrap
+* Font Awesome
+* jQuery
+* Prism
 
 License
 -------
