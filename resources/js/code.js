@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('#pill-c').click(function() {
     $('#pill-c').attr('class', 'active');
 
-    $('.code-c').show();
+    $('#code-1').show();
+    $('#code-2').show();
   });
 });

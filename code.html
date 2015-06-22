@@ -66,7 +66,7 @@
       <div class="row">
         <!-- First column -->
         <div class="col-md-6">
-          <pre class="code-c"><code class="language-c">void *barber() {
+          <pre id="code-c"><code class="language-c">void *barber() {
   while (1) {
     /* Barber sleeps if there are no customers */
     sem_wait(&amp;customers);
@@ -90,7 +90,7 @@
 
         <!-- Second column -->
         <div class="col-md-6">
-          <pre class="code-c"><code class="language-c">void *customer() {
+          <pre id="code-c"><code class="language-c">void *customer() {
   /* Enters critical region */
   sem_wait(&amp;mutex);
 
@@ -124,7 +124,8 @@
     <footer class="footer">
       <div class="container">
         <p class="text-muted">
-          Created by Klaus Borges &middot; Code licensed under the MIT license
+          Created by <a href="mailto:klausborgs at gmail dot com">Klaus Borges</a>
+          &middot; Code licensed under the MIT license
         </p>
       </div>
     </footer>

@@ -5,8 +5,8 @@ The Sleeping Barber Problem is an Open Educational Resource (OER) developed for
 the Operating Systems I course at University of São Paulo (USP), São Carlos campus.
 
 This project aims to improve the course experience for teachers and students alike
-by providing resources to aid in understanding a common problem in inter-process
-communication and synchronization. Among these resources there is an explanation of
+by providing resources to aid in understanding an *almost* classic problem in *inter-process
+communication* and *synchronization*. Among these resources there is an explanation of
 the problem and the core concepts needed to understand it, the development and proposal
 of one of the possible solutions, a visualization tool demonstrating the state of the
 semaphores and mutexes, and code implementation of the proposed solution.
@@ -14,13 +14,40 @@ semaphores and mutexes, and code implementation of the proposed solution.
 Dependencies
 ------------
 
-None. The project is batteries included!
+A browser capable of interpreting JavaScript.
 
 Installing
 ----------
 
 Installing this OER is as simple as cloning this repository, or extracting the contents
-of a zip file and running `index.html` in your browser.
+of a zip file and running `index.html` on your browser.
+
+Usage
+-----
+
+There's a nice panel on top of the page with one entry for each section of the project,
+each one of them is pretty self-explanatory, being mostly text or code. The exception
+is the visualization page, which has its usage described below.
+
+The visualization tool is used to simulate the proposed implementation of one solution
+to the Sleeping Barber problem, using semaphores and mutexes. The term `step` used in
+the context of this tool is an attempt at simulating a scheduler.
+
+The visualization is composed of panels: the waiting room lists customers currently
+waiting to be serviced by the barber; the barber's chair holds the current customer
+getting a haircut; the state panel displays the states of the semaphores and mutex and
+the number of customers at the barbershop.
+A status panel displays the current status of the application, a sentence explaining
+what's been done in the current step.
+
+Both barber and customer's functions are the last part of the visualization tool, and
+their lines are highlighted to represent the lines currently being executed in the
+current step.
+
+Labels in the panel title represent the state of the threads. A blue label indicates
+that a thread is currently active, as selected by the scheduler. Green and yellow
+labels indicate whether a program is running or waiting on a semaphore/mutex. Gray
+label indicates which client thread is being executed. 
 
 
 Code implementations of the problem
